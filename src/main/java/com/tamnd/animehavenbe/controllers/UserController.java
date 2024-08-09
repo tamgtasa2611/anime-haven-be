@@ -20,6 +20,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api")
+@CrossOrigin(origins = "http://localhost:3000")
 public class UserController {
     private final Logger log = LoggerFactory.getLogger(UserDTO.class);
     private final UserService userService;
@@ -32,7 +33,7 @@ public class UserController {
 
     @GetMapping("/users")
     public ResponseEntity<List<UserDTO>> getUsers(@RequestParam(value = "page", defaultValue = "0") int page,
-                                                  @RequestParam(value = "size", defaultValue = "5") int size,
+                                                  @RequestParam(value = "size", defaultValue = "20") int size,
                                                   @RequestParam(value = "sort", defaultValue = "id") String sort) {
         log.debug("REST request to get users");
         Page<UserDTO> pageable = userService.getUsers(page, size);
