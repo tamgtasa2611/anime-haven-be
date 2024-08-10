@@ -38,7 +38,7 @@ public class BrandController {
         return ResponseEntity.ok().headers(headers).body(pageable.getContent());
     }
 
-    @GetMapping("/brands/{id}")
+    @GetMapping("/brand/{id}")
     public ResponseEntity<BrandDTO> getBrand(@PathVariable Long id) {
         log.debug("REST request to get Brand : {}", id);
         return ResponseEntity.ok().headers(headers).body(brandService.getBrand(id));
@@ -51,7 +51,7 @@ public class BrandController {
         return ResponseEntity.created(new URI("api/brands/" + result.getId())).headers(headers).body(result);
     }
 
-    @PutMapping("/brands/{id}")
+    @PutMapping("/brand/{id}")
     public ResponseEntity<BrandDTO> updateBrand(@PathVariable Long id, @Valid @RequestBody BrandDTO brandDTO) throws BadRequestException {
         log.debug("REST request to update brand : {}", brandDTO);
         if(!brandDTO.getId().equals(id)) {
@@ -61,9 +61,9 @@ public class BrandController {
         return ResponseEntity.ok().headers(headers).body(result);
     }
 
-    @DeleteMapping("/brands/{id}")
+    @DeleteMapping("/brand/{id}")
     public ResponseEntity<Void> deleteBrand(@PathVariable Long id) {
-        log.debug("REST request to delete Brand : {}", id);
+        log.debug("REST request to delete brand : {}", id);
         brandService.deleteBrand(id);
         return ResponseEntity.noContent().headers(headers).build();
     }
