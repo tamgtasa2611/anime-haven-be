@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.tamnd</groupId>
     <artifactId>anime-haven-be</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1</version>
     <name>anime-haven-be</name>
     <description>anime-haven-be</description>
     <url/>
@@ -27,7 +27,7 @@
         <url/>
     </scm>
     <properties>
-        <java.version>22</java.version>
+        <java.version>17</java.version>
     </properties>
     <dependencies>
         <dependency>
