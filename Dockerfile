@@ -10,6 +10,6 @@ FROM openjdk:17-jdk-slim
 
 EXPOSE 8080
 
-COPY --from=target /target/demo-1.jar app.jar
+COPY --from=target /target/anime-haven-be.jar app.jar
 
 ENTRYPOINT ["java", "-jar", "app.jar"]
